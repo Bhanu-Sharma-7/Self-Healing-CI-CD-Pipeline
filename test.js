@@ -8,7 +8,7 @@ app.get('/', (req, res) => res.send('Hello from Express App'));
 const server = app.listen(5000, () => {
   console.log('Server started, running smoke test...');
 
-  // Added a small delay before making the HTTP request to ensure the server is fully started
+  // Adjust the delay to confirm the server is fully ready before the test
   setTimeout(() => {
     http.get('http://localhost:5000/', (res) => {
       console.log(`Status: ${res.statusCode}`);
@@ -26,7 +26,7 @@ const server = app.listen(5000, () => {
       server.close();
       process.exit(1);
     });
-  }, 1000); // 1 second delay
+  }, 3000); // Increased to 3 seconds delay
 });
 
 process.on('SIGINT', () => {
