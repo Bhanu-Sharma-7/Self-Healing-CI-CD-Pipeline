@@ -17,6 +17,7 @@ const server = app.listen(5000, () => {
         server.close();
         process.exit(0);
       } else {
+        console.error('Smoke test failed: received non-200 response');
         server.close();
         process.exit(1);
       }
