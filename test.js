@@ -26,7 +26,7 @@ const server = app.listen(5000, () => {
       server.close();
       process.exit(1);
     });
-  }, 3000); // Increased to 3 seconds delay
+  }, 1000); // Decreased to 1 second delay for quicker test
 });
 
 process.on('SIGINT', () => {
