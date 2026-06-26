@@ -28,3 +28,8 @@ const server = app.listen(5000, () => {
     });
   }, 1000); // 1 second delay
 });
+
+process.on('SIGINT', () => {
+  server.close();
+  process.exit(0);
+});
